@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import React, { useEffect } from 'react';
 import './App.css';
 
 function App() {
@@ -11,6 +12,19 @@ const [editingText, setEditingText] = useState('');
 const [todoEditing, setTodoEditing] = useState(null);
 
 /*************************** Methods ****************************/
+// Use localStorage
+useEffect(() => {
+  const temp = JSON.stringify(todos);
+  localStorage.setItem('todos', xyz)
+},[todos])
+
+useEffect(() => {
+  const temp = localStorage.getItem('todos');
+  const savedTasks = JSON.parse(temp);
+  if (savedTasks){
+    setTodos(savedTasks)
+  }
+},[])
 
 // add the user input to state and reset the input
 function handleSubmit(e){
@@ -41,7 +55,7 @@ function toggleCompleted(someId) {
   });
   setTodos(updatedTodos);
 }
-// assign the edited value to the task with matching id, reset all state vars.
+// assign the edited value to the task with matching id, reset all st
 // except the one the method modifies
 function editTodo(someId){
   const updatedTodos = [...todos].map((todo) => {
@@ -84,13 +98,14 @@ function editTodo(someId){
                  <button onClick={() => editTodo(todo.id)}>Submit</button>
 
               </div>)
+
                                     :
+
               (<div>{todo.text}</div>)
             }
 
 
             <button onClick={() => setTodoEditing(todo.id)}>Edit</button>
-
             <button onClick={() => deleteTodo(todo.id)}> Delete </button>
             <input type='checkbox'
                    onChange={() => toggleCompleted(todo.id)}
