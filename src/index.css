@@ -12,6 +12,22 @@ code {
     monospace;
 }
 */
+body {
+  font-size: 16px;
+}
+.wrapper {
+  display: flex;
+  justify-content: center;
+}
+input {
+  height: 5vh;
+  border-radius: 10px;
+  margin-right: 2vw;
+}
+button {
+  height: 5vh;
+  border-radius: 10px;
+}
 li {
   list-style-type: none;
 }
