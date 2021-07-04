@@ -97,16 +97,17 @@ function App() {
                 <button onClick={() => editTodo(todo.id)}>Submit</button>
               </div>
             ) : (
-              <div>{todo.text}</div>
+              <div className="rendered-task">{todo.text}</div>
             )}
-
-            <button onClick={() => setTodoEditing(todo.id)}>Edit</button>
-            <button onClick={() => deleteTodo(todo.id)}> Delete </button>
-            <input
-              type="checkbox"
-              onChange={() => toggleCompleted(todo.id)}
-              checked={todo.completed}
-            />
+            <div className="buttons-wrapper">
+              <button onClick={() => setTodoEditing(todo.id)}>Edit</button>
+              <button onClick={() => deleteTodo(todo.id)}> Delete </button>
+              <input
+                type="checkbox"
+                onChange={() => toggleCompleted(todo.id)}
+                checked={todo.completed}
+              />
+            </div>
           </li>
         ))}
       </ul>

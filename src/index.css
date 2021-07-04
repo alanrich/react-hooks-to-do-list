@@ -12,22 +12,37 @@ code {
     monospace;
 }
 */
-body {
+* {
   font-size: 16px;
 }
 .wrapper {
   display: flex;
   justify-content: center;
 }
+.rendered-task {
+  font-size: 2.4rem;
+  font-family: Helvetica;
+  margin-bottom: 1rem;
+}
+.buttons-wrapper {
+  display: flex;
+  justify-content: center;
+}
+.buttons-wrapper > input {
+  margin-left: 3vw;
+  border: 2px;
+  height: ;
+}
 input {
   height: 5vh;
   border-radius: 10px;
-  margin-right: 2vw;
 }
 button {
   height: 5vh;
   border-radius: 10px;
   padding: 0.5rem 1rem;
+  margin-left: 2vw;
+  min-width: 200px;
 }
 li {
   list-style-type: none;
