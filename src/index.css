@@ -27,6 +27,7 @@ input {
 button {
   height: 5vh;
   border-radius: 10px;
+  padding: 0.5rem 1rem;
 }
 li {
   list-style-type: none;
